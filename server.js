@@ -10,10 +10,8 @@ const profile=require('./controllers/profile');
 const db=knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'root',
-    database : 'facerecognitionapp'
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   }
 })
 const passport=require('passport');
