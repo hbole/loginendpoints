@@ -25,10 +25,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/',(req,res)=>{
-	db.select('*').from('users')
-	.then(users=>res.send(users));
-})
+app.get('/',(req,res)=>{res.send('It is working')})
 app.post('/login',(req,res)=>login.handleLogin(req,res,db,bcrypt))
 app.post('/signup',(req,res)=>signup.handleSignup(req,res,db,bcrypt))
 app.get('/viewprofile/:name',(req,res)=>profile.handleProfile(req,res,db))
