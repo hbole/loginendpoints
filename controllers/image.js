@@ -4,7 +4,7 @@ const app = new Clarifai.App({
 });
 const handleApiCall=(req,res)=>{
 	app.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
-	.then(data=>{data.json();})
+	.then(data=>{data.json()})
 	.catch(err=>res.status(400).json('Unable to handle API Call'))
 }
 
